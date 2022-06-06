@@ -10,8 +10,8 @@
 			top: 20px;
 			left: 300px;
 			font-weight: bolder;
-			
 		}
+		.error {color: red;}
 	</style>
 </head>
 <body>
@@ -118,14 +118,14 @@
 			<label for="fname">First Name</label>
 			<input type="text" name="firstname" id="fname" value="<?php echo $firstname; ?>">
 
-			<span><?php echo $firstnameErrMsg; ?></span>
+			<span class="error">*<?php echo $firstnameErrMsg; ?></span>
 
 			<br><br>
 
 			<label for="lname">Last Name</label>
 			<input type="text" name="lastname" id="lname" value="<?php echo $lastname; ?>">
 			
-			<span><?php echo $lastnameErrMsg; ?></span>
+			<span class="error">*<?php echo $lastnameErrMsg; ?></span>
 
 			<br><br>
 
@@ -134,7 +134,7 @@
 			<label for="male">Male</label>
 			<input type="radio" name="gender" id="female" value="Female" <?php echo ($gender=='Female')?'checked':'' ?>>
 			<label for="female">Female</label>
-			<span><?php echo $genderErrMsg ?></span>
+			<span class="error">*<?php echo $genderErrMsg ?></span>
 			
 			<br><br>
 
@@ -147,13 +147,13 @@
 
 			<label for="email">Email</label>
 			<input type="email" name="email" id="email" value="<?php echo $email; ?>">
-			<span><?php echo $emailErrMsg ?></span>
+			<span class="error">*<?php echo $emailErrMsg ?></span>
 
 			<br><br>
 
 			<label for="mobileno">Mobile No</label>
 			<input type="text" name="mobileno" id="mobileno" value="<?php echo $mobileno; ?>">
-			<span><?php echo $mobilenoErrMsg ?></span>
+			<span class="error">*<?php echo $mobilenoErrMsg ?></span>
 
 			<br><br>
 
@@ -164,14 +164,14 @@
 
 			<label for="address1">Street/House/Road</label>
 			<input type="text" name="address1" id="address1" value="<?php echo $address1; ?>">
-			<span><?php echo $address1ErrMsg ?></span>
+			<span class="error">*<?php echo $address1ErrMsg ?></span>
 
 			<br><br>
 
 			<label for="country">Country</label>
 			<select name="country" id="country">
-				<option value="bd" <?=$country == 'bd' ? ' selected="selected"' : '';?> >Bangladesh</option>
-				<option value="usa" <?=$country == 'usa' ? ' selected="selected"' : '';?> >United States of America</option>
+				<option value="Bangladesh" <?=$country == 'Bangladesh' ? ' selected="selected"' : '';?> >Bangladesh</option>
+				<option value="USA" <?=$country == 'USA' ? ' selected="selected"' : '';?> >United States of America</option>
 			</select>
 
 			<br><br>
@@ -180,6 +180,25 @@
 
 		<input type="submit" name="submit" value="Register">
 	</form>
+
+	<?php
+        echo "<h2>Registered Input:</h2>";
+        echo $firstname;
+        echo "<br>";
+        echo $lastname;
+        echo "<br>";
+        echo $gender;
+        echo "<br>";
+        echo $email;
+        echo "<br>";
+        echo $mobileno;
+        echo "<br>";
+        echo $address1;
+        echo "<br>";
+        echo $country;
+        
+        
+     ?>
 
 </body>
 </html>
